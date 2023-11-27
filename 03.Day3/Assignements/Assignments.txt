@@ -1,0 +1,12 @@
+1. Create a react component to display the employee details by usnig below url:
+			https://dummy.restapiexample.com/api/v1/employees
+	
+2.   Create a react component to perform CRUD operations on products data using JSON Server
+
+	required properties:   id, name, quantity, category, unitprice
+	
+3.  Study the following items:
+		a.   How to sent authentication token in axios request?
+
+				
+			

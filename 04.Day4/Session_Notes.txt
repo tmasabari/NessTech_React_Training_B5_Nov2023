@@ -1,0 +1,57 @@
+Performing validations in React Forms
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1.  state values 
+2.  error message for each state value 
+
+	a.  perform validations on state variables
+	b.  if any failures,  store validations error message in error object
+	c.   check any errors in error object to stop sending data to server 
+			if no  errors in error object to send the data to server 
+	
+	
+
+		if(uname.length == 0)
+        {
+            tempErrorObj.uname = "User Name is required";            
+        }
+        else
+        {
+            tempErrorObj.uname = "";            
+        }
+		
+		
+		
+		tempErrorObj.uname =  (uname.length == 0)?"User Name is required":"";		
+---------------------------------------------------------------------------------------------------------------
+
+React Forms Validations  using 3rd Party Library
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-->  React Hook Form reduces the amount of code you need to write while removing unnecessary re-renders.
+
+	Library Name  :   react-hook-form
+	Instillation:    npm i react-hook-form   --save
+	
+	
+-->  	import { useForm } from 'react-hook-form';	
+
+		const { register,  handleSubmit,  formState: { errors },   } =  useForm();
+		
+		const [uname, setUname]  = useState("");
+		
+		
+		
+		 <form onSubmit={ handleSubmit((data) => console.log(data))}>
+				
+					<input {...register('firstName',  {required : true})}   />
+						{errors.firstName && <span> First Name is required. </span>}	
+					
+					 <input {...register('lastName', { required: true })} />
+					 {errors.lastName && <span>Last name is required.</span>}
+					 
+					 <input {...register('age', { pattern: /\d+/ })} />
+					 {errors.age && <p>Please enter number for age.</p>}
+					 
+		 
+			 <input type="submit" />		 
+		 </form>

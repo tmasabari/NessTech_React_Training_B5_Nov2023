@@ -1,0 +1,26 @@
+useContext  hook
+~~~~~~~~~~~~~~~				
+--> "useContext"	hook is used to create common data that can be accessed throughout the component hierarchy without passing the data manually using props.
+
+-->  Context defined will be available to all the child components without involving "props" ;
+
+Usage:		  
+				//1.  Create context
+				var  contextObj =  React.createContext(null);
+				
+				
+				//2. Set data and configure in App component 
+				<contextObj.Provider  value={userObj}>
+						// Use child components						
+				</contextObj.Provider>
+			
+				// 3. access the context
+				  var  obj  =   React.useContext(contextObj);
+				  
+				  
+				  
+		
+	App
+		-->	Demo 
+						--->	GrandChild
+
